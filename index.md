@@ -1,5 +1,5 @@
 ## Welcome to FF's Pages
-## profiles
+## Profiles
 
 ~~[facebook](https://www.facebook.com/profile.php?id=100002258495173&ref=bookmarks)~~
 
@@ -13,3 +13,4 @@
 >雖然所有工作都是由淺入深，但務必追求能理解、掌握底層的機制與概念，外頭的招式會變，但本質卻是不變的  
 
 出處: [#1RvKdKhE(Soft_Job)](https://moptt.tw/p/Soft_Job.M.1541753300.A.ACE) by fayhong
+

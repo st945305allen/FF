@@ -31,10 +31,11 @@
     
 ## 程式相關
 + set bool Y N  
-``` public string SPCJudge 
+```
+public string SPCJudge 
 {  
-get { return _spcJudge == true ? "Y" : "N"; }  
-set { _spcJudge = value == "N" ? false : true;}  
+    get { return _spcJudge == true ? "Y" : "N"; }  
+    set { _spcJudge = value == "N" ? false : true;}  
 }
  ```
         

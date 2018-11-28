@@ -28,3 +28,13 @@
     - 每一項目給個大綱 流程圖的位置之類的
     - 被問問題先想一下在回答
     - 物件的flag在系統的功能是甚麼，標了會怎麼樣(在系統流程中)
+    
+## 程式相關
++ set bool Y N  
+        ```public string SPCJudge  
+        {  
+        get { return _spcJudge == true ? "Y" : "N"; }  
+        set { _spcJudge = value == "N" ? false : true;}  
+        }
+        ```
+        

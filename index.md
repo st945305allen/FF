@@ -1,11 +1,9 @@
 ## Welcome to FF's Pages
-profiles
-=========
+##profiles
 
 ~~[facebook](https://www.facebook.com/profile.php?id=100002258495173&ref=bookmarks)~~
 
-技術筆記
-==========
+#技術筆記
 >不要進法人寫文件，不要追buss word，不要滿足於眼前學會的工法，不要忘記回頭念演算法與資料結構  
 >不要與人、社會、家庭、朋友、團隊脫離，但要學會忍受一人獨學的孤獨，不要急著彰顯自己，但要學會親切而嚴謹的表達   
 >不要戰語言，但要知道哪個好，哪個不好  

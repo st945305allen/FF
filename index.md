@@ -1,36 +1,17 @@
 ## Welcome to FF's Pages
 #profiles
+==========================
 
-[facebook](https://www.facebook.com/profile.php?id=100002258495173&ref=bookmarks)
+~~[facebook](https://www.facebook.com/profile.php?id=100002258495173&ref=bookmarks)~~
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
- ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-~### Jekyll Themes~
-
-~Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/st945305allen/test/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.~
-
-~### Support or Contact~
-
-~Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.~
+#技術筆記
+==========================
+>ptt soft_job fayhong 網友開示
+>不要進法人寫文件，不要追buss word，不要滿足於眼前學會的工法，不要回頭念演算法與資料結構  
+>不要與人、社會、家庭、朋友、團隊脫離，但要學會忍受一人獨學的孤獨，不要急著彰顯自己，但要學會親切而嚴謹的表達  
+>不要戰語言，但要知道哪個好，哪個不好
+>不要反商，但要從開源學會智慧，從企業學會包裝
+>不要忽視 UI/UX，但也要能具備從0到1的架構能力
+>程式已外的興趣很重要，但更重要的是專精這些門道，就像精通開發方法與設計技巧一般  
+>雖然所有工作都是由淺入深，但務必追求能理解、掌握底層的機制與概念，外頭的招式會變，但本質卻是不變的
+>

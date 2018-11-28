@@ -20,6 +20,5 @@
 + 字串跟NULL串在一起時，會變NULL，遇到時用 `isnull(obj," ")` 防出錯
 + 若method下面沒有特別的logic，判斷直接return掉
 + 專案出錯先取新版重建再說
-
-專案起始設定
-Webserver -> 屬性 -> 起始選項 -> 起始外部程式 -> MDI.MAIN -> 引數 '-start'
++ 專案起始設定
+    - Webserver -> 屬性 -> 起始選項 -> 起始外部程式 -> MDI.MAIN -> 引數 '-start'

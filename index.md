@@ -38,4 +38,58 @@ public string SPCJudge
     set { _spcJudge = value == "N" ? false : true;}  
 }
  ```
++ open web page
+```
+private void tdbgWIPTrx_DoubleClick(object sender, EventArgs e)
+{        
+
+    if (tdbgWIPTrx.Splits[0].DisplayColumns[tdbgWIPTrx.Col].DataColumn.DataField == "E_TRX_FILE")
+    {               
+      string strTrxFilePath = tdbgWIPTrx.Splits[0].DisplayColumns[tdbgWIPTrx.Col].DataColumn.CellValue(tdbgWIPTrx.Row).ToString();
+      LMOTW2228.ClientSTD.Library.CommFunction.OpenWebPage(strTrxFilePath);
+      return;
+    }          
+}
+```
++ CHECK cmbItem select status
+```
+if (this.chkItem.Checked)
+{
+    if (this.cmbItem.SelectedIndex == -1)
+    {
+        this.ShowMessage(this, "MCPQ006002", IconType.Warning); //請選擇機種代碼!
+        this.cmbItem.Focus();
+        return;
+    }
+}
+```
++ datetime compare
+```
+UDbCommand uDbCommand = new UDbCommand();
+    uDbCommand.CommandText = string.Format(sql, DBParameterChar.ParamChar);
+    uDbCommand.Parameters.Add(DBParameterChar.ParamChar, "QCLOT_KEY", drSelQCLot["QCLOT_KEY"].ToString(), typeof(string));
+    DataTable dtQCLotSn = CClient.ActiveucClient.GetDataSet(uDbCommand).Tables[0];
+    
+    DateTime startDate = new DateTime(dtpCreateDateStart.Value.Year, dtpCreateDateStart.Value.Month, dtpCreateDateStart.Value.Day, 0, 0, 0);
+    DateTime endDate = new DateTime(dtpCreateDateEnd.Value.Year, dtpCreateDateEnd.Value.Month, dtpCreateDateEnd.Value.Day, 23, 59, 59);
+    if (this.chkCreateDate.Checked)
+    {
+
+        if (startDate > endDate)
+            {
+                this.ShowMessage(this, "MCPQ010007", IconType.Warning); //檢驗批開立時間,起始時間不得大於結束時間!
+                this.dtpCreateDateStart.Focus();
+                return;
+            }
+    }
+```
++ no title
+```
+DataTable dtMap = (DataTable)tdbGridSelected.DataSource;
+            var vCheckRow = (from row in dtMap.AsEnumerable()
+                             where row["INSPCHAR_PROP"].ToString() == "VAR"
+                             && string.IsNullOrEmpty(row["INSPECTION_POINTS"].ToString())
+                             select row).Take(1);
+            if (vCheckRow.Count() > 0)
+```
         

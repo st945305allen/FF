@@ -1,11 +1,6 @@
 ## Welcome to FF's Pages
-
-You can use the [editor on GitHub](https://github.com/st945305allen/test/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
-
-[My FaceBook](https://www.facebook.com/profile.php?id=100002258495173&ref=bookmarks) and 
-![Image](https://scontent.fkhh1-2.fna.fbcdn.net/v/t31.0-8/10329966_927904493961492_5039129580048294240_o.jpg?_nc_cat=104&_nc_eui2=AeGMBKxoH0gNnmVSQ_DVs6Ej8-YiZJD-tR0JXd1cyFE3bOtvJz97-hKq2a9D8ELE3s9IZ_lO8wYpD_DF11hCVtGslcmgbaFHfSZjbmwgREHZvw&_nc_ht=scontent.fkhh1-2.fna&oh=faf246121cfbaf46095fd374865ce558&oe=5CAD6063)
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+#profiles
+[FaceBook](https://www.facebook.com/profile.php?id=100002258495173&ref=bookmarks)
 
 ### Markdown
 

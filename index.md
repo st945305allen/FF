@@ -14,3 +14,12 @@
 
 出處: [#1RvKdKhE(Soft_Job)](https://moptt.tw/p/Soft_Job.M.1541753300.A.ACE) by fayhong
 
+## 注意事項
++ 主檔設定記得改使用者群組功能權限
++ 當c1設計工具拉grid無效時，要去擴展欄位改或右鍵自動恢復欄位格式
++ 字串跟NULL串在一起時，會變NULL，遇到時用 `isnull(obj," ")` 防出錯
++ 若method下面沒有特別的logic，判斷直接return掉
++ 專案出錯先取新版重建再說
+
+專案起始設定
+Webserver -> 屬性 -> 起始選項 -> 起始外部程式 -> MDI.MAIN -> 引數 '-start'

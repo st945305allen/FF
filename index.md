@@ -30,6 +30,7 @@
     - 物件的flag在系統的功能是甚麼，標了會怎麼樣(在系統流程中)
 + insert多筆data時，盡量多包裹try-catch，以防止單筆出錯後面不會執行的狀況
 + sql server & oracle server 有大小寫之分，要注意
++ dataview linq 差別
     
 ## 程式相關
 + set bool Y N  

@@ -107,27 +107,54 @@
             <button class="nes-btn" style="width:100px" onclick="DO()">DO</button>
             <button class="nes-btn" style="width:100px" onclick="RESET()">RESET</button>
         </div>
+        <div style="width:600px;height:300px ; margin-top:20px">
+            <div id="color" class="nes-container with-title is-centered">
+                <p class="title">color</p>
+                <p id="cmt"></p>
+            </div>
+        </div>
     </CENTER>
 </body>
 <script>
     function RESET() {
         $('input:text').val('');
         $("span[id!='']").text('');
+        $('#cmt').text('');
     }
     function DO() {
-        //if ($('#HEX').val().trim() !== '' || $('#INTEGER').val().trim() !== '' ||
-        //($('#RGB_B').val().trim() !== '' && $('#RGB_B').val().trim() !== '' && $('#RGB_B').val().trim() !== ''))
-        //  return;
+        $('#cmt').text('');
         if ($('#RGB_R').val().trim() !== '' && $('#RGB_G').val().trim() !== '' && $('#RGB_B').val().trim() !== '') {
             var red = $('#RGB_R').val();
             var green = $('#RGB_G').val();
             var blue = $('#RGB_B').val();
-            var rgb = red;
-            rgb = (rgb << 8) + Number(green);
-            rgb = (rgb << 8) + Number(blue);
-            rgb = -(Math.pow(2, 24) - rgb);
-            $('#RGB_INTEGER').text(rgb);
+            if (red <= 0 || red > 255 || green <= 0 || green > 255 || blue <= 0 || blue > 255)
+            {
+                $('#cmt').text("must be in 0-255");
+                return;
+            }    
+            $('#RGB_INTEGER').text(RGBtoINTEGER(red, green, blue));
             $('#RGB_HEX').text(rgbToHex(Number(red), Number(green), Number(blue)));
+            $('#color').css("background-color", rgbToHex(Number(red), Number(green), Number(blue)));
+        }
+
+        if ($('#HEX').val().trim() !== '') {
+            var hex = $('#HEX').val().trim();
+            $('#HEX_R').text(HEXtoRGB(hex).r);
+            $('#HEX_G').text(HEXtoRGB(hex).g);
+            $('#HEX_B').text(HEXtoRGB(hex).b);
+            var red = HEXtoRGB(hex).r;
+            var green = HEXtoRGB(hex).g;
+            var blue = HEXtoRGB(hex).b;
+            $('#HEX_INTEGER').text(RGBtoINTEGER(red, green, blue));
+            $('#color').css("background-color", hex);
+        }
+        if ($('#INTEGER').val().trim() !== '') {
+            var integer = $('#INTEGER').val().trim();
+            $('#INTEGER_R').text(INTEGERtoRGB(integer).r);
+            $('#INTEGER_G').text(INTEGERtoRGB(integer).g);
+            $('#INTEGER_B').text(INTEGERtoRGB(integer).b);
+            $('#INTEGER_HEX').text(rgbToHex(INTEGERtoRGB(integer).r, INTEGERtoRGB(integer).g, INTEGERtoRGB(integer).b));
+            $('#color').css("background-color", rgbToHex(INTEGERtoRGB(integer).r, INTEGERtoRGB(integer).g, INTEGERtoRGB(integer).b));
         }
     }
     function componentToHex(c) {
@@ -138,19 +165,29 @@
     function rgbToHex(r, g, b) {
         return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
     }
+    function HEXtoRGB(hex) {
+        var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? {
+            r: parseInt(result[1], 16),
+            g: parseInt(result[2], 16),
+            b: parseInt(result[3], 16)
+        } : null;
+    }
+    function RGBtoINTEGER(red, green, blue) {
+        var rgb = red;
+        rgb = (rgb << 8) + Number(green);
+        rgb = (rgb << 8) + Number(blue);
+        rgb = -(Math.pow(2, 24) - rgb);
+        return rgb;
+    }
+    function INTEGERtoRGB(integer) {
+        rgb = Math.pow(2, 24) - integer * (-1);
+        return rgb ? {
+            r: parseInt((rgb >> 16) & 0xFF),
+            g: parseInt((rgb >> 8) & 0xFF),
+            b: parseInt(rgb & 0xFF)
+        } : null;
+    }
 </script>
-<!--
-    var red = 0;
-  var green = 0;
-  var blue = 0; 
-  var rgb = red;
-rgb = (rgb << 8) + green;
-rgb = (rgb << 8) + blue;
-  document.write(-(Math.pow(2,24)-rgb)) 
-    rgb = Math.pow(2,24)-x*(-1)
-    var red = (rgb >> 16)& 0xFF ;
-var green = (rgb >> 8)& 0xFF ;
-var blue = rgb & 0xFF;
--->
 
 </html>

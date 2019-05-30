@@ -1,0 +1,156 @@
+<html>
+
+<head>
+    <title>RGB Int Calculator</title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs
+/jquery/1.4.0/jquery.min.js"></script>
+    <style>
+        html,
+        body,
+        pre,
+        code,
+        kbd,
+        samp {
+            font-family: 'Press Start 2P', cursive;
+        }
+    </style>
+</head>
+
+<body>
+    <CENTER>
+        <H3>Calculate RGB Int</H3>
+        <div class="nes-table-responsive">
+            <table class="nes-table is-bordered is-centered">
+                <thead>
+                    <tr>
+                        <th>RGB</th>
+                        <th>HEX</th>
+                        <th>INTEGER</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="nes-field is-inline">
+                                <label for="inline_field">R</label>
+                                <input type="text" id="RGB_R" class="nes-input" placeholder="0-255">
+                            </div>
+                            <div class="nes-field is-inline" style="margin-top: 10px">
+                                <label for="inline_field">G</label>
+                                <input type="text" id="RGB_G" class="nes-input" placeholder="0-255">
+                            </div>
+                            <div class="nes-field is-inline" style="margin-top: 10px">
+                                <label for="inline_field">B</label>
+                                <input type="text" id="RGB_B" class="nes-input" placeholder="0-255">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="nes-field is-inline">
+                                <label for="inline_field">HEX</label>
+                                <input type="text" id="HEX" class="nes-input" placeholder="#ffffff">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="nes-field is-inline">
+                                <label for="inline_field">INTEGER</label>
+                                <input type="text" id="INTEGER" class="nes-input" placeholder="">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="nes-text">HEX = </span>
+                            <span id="RGB_HEX" class="nes-text"></span>
+                        </td>
+                        <td>
+                            <span class="nes-text">R = </span>
+                            <span id="HEX_R" class="nes-text"></span>
+                            <br>
+                            <span class="nes-text">G = </span>
+                            <span id="HEX_G" class="nes-text"></span>
+                            <br>
+                            <span class="nes-text">B = </span>
+                            <span id="HEX_B" class="nes-text"></span>
+                        </td>
+                        <td>
+                            <span class="nes-text">R = </span>
+                            <span id="INTEGER_R" class="nes-text"></span>
+                            <br>
+                            <span class="nes-text">G = </span>
+                            <span id="INTEGER_G" lass="nes-text"></span>
+                            <br>
+                            <span class="nes-text">B = </span>
+                            <span id="INTEGER_B" class="nes-text"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="nes-text">INTEGER = </span>
+                            <span id="RGB_INTEGER" class="nes-text"></span>
+                        </td>
+                        <td>
+                            <span class="nes-text">INTEGER = </span>
+                            <span id="HEX_INTEGER" class="nes-text"></span>
+                        </td>
+                        <td>
+                            <span class="nes-text">HEX = </span>
+                            <span id="INTEGER_HEX" class="nes-text"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="margin-top:10px;">
+            <button class="nes-btn" style="width:100px" onclick="DO()">DO</button>
+            <button class="nes-btn" style="width:100px" onclick="RESET()">RESET</button>
+        </div>
+    </CENTER>
+</body>
+<script>
+    function RESET() {
+        $('input:text').val('');
+        $("span[id!='']").text('');
+    }
+    function DO() {
+        //if ($('#HEX').val().trim() !== '' || $('#INTEGER').val().trim() !== '' ||
+        //($('#RGB_B').val().trim() !== '' && $('#RGB_B').val().trim() !== '' && $('#RGB_B').val().trim() !== ''))
+        //  return;
+        if ($('#RGB_R').val().trim() !== '' && $('#RGB_G').val().trim() !== '' && $('#RGB_B').val().trim() !== '') {
+            var red = $('#RGB_R').val();
+            var green = $('#RGB_G').val();
+            var blue = $('#RGB_B').val();
+            var rgb = red;
+            rgb = (rgb << 8) + Number(green);
+            rgb = (rgb << 8) + Number(blue);
+            rgb = -(Math.pow(2, 24) - rgb);
+            $('#RGB_INTEGER').text(rgb);
+            $('#RGB_HEX').text(rgbToHex(Number(red), Number(green), Number(blue)));
+        }
+    }
+    function componentToHex(c) {
+        var hex = c.toString(16);
+        return hex.length == 1 ? "0" + hex : hex;
+    }
+
+    function rgbToHex(r, g, b) {
+        return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+    }
+</script>
+<!--
+    var red = 0;
+  var green = 0;
+  var blue = 0; 
+  var rgb = red;
+rgb = (rgb << 8) + green;
+rgb = (rgb << 8) + blue;
+  document.write(-(Math.pow(2,24)-rgb)) 
+    rgb = Math.pow(2,24)-x*(-1)
+    var red = (rgb >> 16)& 0xFF ;
+var green = (rgb >> 8)& 0xFF ;
+var blue = rgb & 0xFF;
+-->
+
+</html>
